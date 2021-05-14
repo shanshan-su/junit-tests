@@ -33,6 +33,13 @@ public class StudentTest {
     @Test
     public void testIfGradeCanBeAdded() {
         assertEquals(0, test.getGrades().size());
+        test.addGrade(-14);
+        assertEquals(0, test.getGrades().size());
+        assertNotEquals(1, test.getGrades().size());
+
+        test.addGrade(125);
+        assertEquals(0, test.getGrades().size());
+        assertNotEquals(1, test.getGrades().size());
 
         test.addGrade(90);
         assertEquals(1, test.getGrades().size());

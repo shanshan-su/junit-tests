@@ -29,7 +29,9 @@ public class Student {
 
     // adds the given grade to the grades list
     public void addGrade(int grade) {
-        this.grades.add(grade);
+        if (grade >= 0 && grade <= 100) {
+            this.grades.add(grade);
+        }
     }
 
     public double getGradeAverage() {

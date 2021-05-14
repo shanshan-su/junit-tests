@@ -42,4 +42,15 @@ public class StudentTest {
         assertNotSame(90, test.getGrades().get(1));
     }
 
+    @Test
+    public void testIfGetGradeAverageWorks() {
+        test.addGrade(90);
+        test.addGrade(99);
+        assertEquals(94.5, test.getGradeAverage(), 0);
+        test.addGrade(95);
+        assertEquals(94.6666667, test.getGradeAverage(), 0.1);
+        test.addGrade(88);
+        assertEquals(93, test.getGradeAverage(), 0);
+    }
+
 }

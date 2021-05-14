@@ -17,7 +17,6 @@ public class StudentTest {
         assertNotEquals("test1", test.getName());
     }
 
-    @Test
 
 
 }

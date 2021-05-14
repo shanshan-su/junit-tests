@@ -39,4 +39,13 @@ public class Student {
         }
         return (double)sum / grades.size();
     }
+
+    public void updateGrade(int i, int grade) {
+        this.getGrades().add(i, grade);
+    }
+
+    public void deleteGrade(int grade) {
+        ArrayList<Integer> grades = this.getGrades();
+        this.getGrades().remove(grades.get(grades.indexOf(grade)));
+    }
 }

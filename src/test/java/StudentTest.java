@@ -1,9 +1,16 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static java.lang.Double.NaN;
 import static org.junit.Assert.*;
 
 public class StudentTest {
+    Student test;
+
+    @Before
+    public void setup() {
+        test = new Student(1L, "test");
+    }
 
     @Test
     public void testIfStudentCanBeCreated() {
@@ -12,8 +19,6 @@ public class StudentTest {
         assertNotNull(shan);
         assertNull(nullStudent);
     }
-
-    Student test = new Student(1L, "test");
 
 //    @Test
 //    public void testIfIdWorks() {
@@ -27,15 +32,15 @@ public class StudentTest {
 //        assertNotEquals("test1", test.getName());
 //    }
 //
-//    @Test
-//    public void testIfGradesIsInitialized() {
-//        assertNotNull(test.getGrades());
-//    }
+    @Test
+    public void testIfGradesIsInitialized() {
+        assertNotNull(test.getGrades());
+    }
 
     @Test
     public void testIfFieldsAreSet() {
-        Student happy = new Student(1L, "happy");
-        assertEquals(1L, happy.getId());
+        Student happy = new Student(2L, "happy");
+        assertEquals(2L, happy.getId());
         assertEquals("happy", happy.getName());
 
         Student hello = new  Student(23L, "hello");

@@ -1,17 +1,22 @@
-import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
 public class StudentTest {
-    Student test = new Student(1, "test");
+
+    @Test
+    public void testIfStudentCanBeCreated() {
+        Student shan = new Student(1L, "shan");
+        Student nullStudent = null;
+        assertNotNull(shan);
+        assertNull(nullStudent);
+    }
+
+    Student test = new Student(1L, "test");
 
     @Test
     public void testIfIdWorks() {
-        assertEquals(1, test.getId());
-        assertNotEquals(2, test.getId());
+        assertEquals(1L, test.getId());
+        assertNotEquals(2L, test.getId());
     }
 
     @Test

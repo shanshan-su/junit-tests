@@ -53,4 +53,16 @@ public class CohortTest {
 
         assertEquals(82.67, marco.getCohortAverage(), 0.1);
     }
+
+    @Test
+    public void testIfFindStudentByIdWorks() {
+        assertNull(marco.findStudentById(1L));
+
+        marco.addStudent(test);
+        assertEquals("test", marco.findStudentById(1L));
+        assertNull(marco.findStudentById(40L));
+
+        marco.addStudent(lily);
+        assertEquals("Lily", marco.findStudentById(40L));
+    }
 }
